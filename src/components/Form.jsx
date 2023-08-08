@@ -6,7 +6,13 @@ function Form({recipeSearch}) {
       searchTerm: "" // initial value of the search term
     })
 
-
+    const handleChange = (e) => { // e accepts an event ON handles
+      console.log(e.target.value)
+      setForm({
+        ...form,
+        searchTerm: e.target.value
+      })
+    }
 
   return (
     <div>   <div>
