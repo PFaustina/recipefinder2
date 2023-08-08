@@ -9,7 +9,9 @@ function App() {
 
   return (
     <>
-
+     {/* Passing the function to Form as a prop and calling it movieSearch */}
+     <Form recipeSearch={getRecipe} /> 
+      <RecipeDisplay recipe={recipe} />
     </>
   )
 }
