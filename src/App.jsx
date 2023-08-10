@@ -4,7 +4,11 @@ import { useState, useEffect } from "react";
 
 function App() {
   
-  const apiKey = ""; // variable with your apiKey
+  const App = () => {
+    const APP_ID = "fdf3085b";
+    const APIKEY = "16d8920fcba909a361e77352243451bd";
+
+
   const [recipe, setRecipe] = useState(null); // state to hold movie data
 
   return (
