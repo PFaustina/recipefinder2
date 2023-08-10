@@ -8,7 +8,9 @@ function App() {
     
     const APIKEY = "16d8920fcba909a361e77352243451bd";
 
-  
+    useEffect(() => {
+      getRecipes();
+    }, []);
 
     const getRecipes = async () => {
       const response = await fetch(`https://api.edamam.com/search?q=chicken&app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}&from=0&to=3&calories=591-722&health=alcohol-free`);
