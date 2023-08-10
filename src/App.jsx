@@ -9,6 +9,8 @@ function App() {
     const APP_ID = "fdf3085bb";
     const APIKEY = "16d8920fcba909a361e77352243451bd";
 
+    const [recipes, setRecipes] = useState([]);
+
     useEffect(() => {
       getRecipes();
     }, []);
