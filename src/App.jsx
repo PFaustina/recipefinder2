@@ -8,8 +8,11 @@ function App() {
     
     const APIKEY = "16d8920fcba909a361e77352243451bd";
 
+  
 
-  const [recipe, setRecipe] = useState(null); // state to hold movie data
+    const getRecipes = async () => {
+      const response = await fetch();
+      const data = response.json();
 
   return (
 <div className="App">
@@ -26,6 +29,6 @@ function App() {
   )
 }
 
-export default App
+export default App;
 
 //comment for commit and push test
