@@ -2,12 +2,24 @@ import React from 'react'
 
 const RecipeDisplay = () => {
   
-  
-  
-  
-  
-    return (
-    <div>RecipeDisplay</div>
+  return (
+    <div>
+      
+
+      <h1>RecipeTitle</h1>
+      <img src="" alt="" />
+      <ol>ingredients</ol>
+
+
+
+
+    </div>
+
+
+
+
+
+
   )
 }
 

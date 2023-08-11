@@ -18,6 +18,8 @@ function App() {
     const getRecipes = async () => {
       const response = await fetch(`https://api.edamam.com/search?q=chicken&app_id=${APP_ID}&app_key=${APIKEY}&from=0&to=3&calories=591-722&health=alcohol-free`);
       const data = response.json();
+        setRecipes(data.hits);
+        console.log(data.hits);
 
   return (
 <div className="App">
