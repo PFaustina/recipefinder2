@@ -1,12 +1,10 @@
-import Form from "./components/Form";
-import RecipeDisplay from "./components/RecipeDisplay";
 import { useState, useEffect } from "react";
+import RecipeDisplay from "./RecipeDisplay";
+
 
 function App() {
-  
-  const App = () => {
     
-    const APP_ID = "fdf3085bb";
+    const APP_ID = "fdf3085b";
     const APIKEY = "16d8920fcba909a361e77352243451bd";
 
     const [recipes, setRecipes] = useState([]);
@@ -20,7 +18,7 @@ function App() {
       const data = response.json();
         setRecipes(data.hits);
         console.log(data.hits);
-
+    };
   return (
 <div className="App">
 
@@ -30,12 +28,17 @@ function App() {
       Search
       </button>
    </form>
+    {recipes.map(recipe =>(
+      <RecipeDisplay 
+      title={recipe.recipe.label} 
+      image={recipe.recipe.image}
+      ingredients={recipe.recipe.ingredients}
+      />
 
+    ))}
 
 </div>
-  )
+  );
 }
 
 export default App;
-
-//comment for commit and push test
