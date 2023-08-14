@@ -10,11 +10,8 @@ function App() {
  // state to hold recipe data
     const [recipes, setRecipes] = useState([]);
 
-    useEffect(() => {
-      getRecipes();
-    }, []);
 
-
+    // state to hold search data
     const [search, setSearch] = useState("");
 
     //Stores current search submit
@@ -22,27 +19,36 @@ function App() {
   const [submit, setSubmit] = useState("");
 
 
+    useEffect(() => {
+      getRecipes();
+    }, [submit]);
+
+
     // Function to get recipes from the API
 
     // "promise" request to my api of fetching the data in the background
     const getRecipes = async () => {
       
-      const response = await fetch(`https://api.edamam.com/search?q=chicken&app_id=${APP_ID}&app_key=${APIKEY}&from=0&to=3&calories=591-722&health=alcohol-free`);
+      const response = await fetch(`https://api.edamam.com/search?q=${submit}&app_id=${APP_ID}&app_key=${APIKEY}&from=0&to=3&calories=591-722&health=alcohol-free`);
       const data = await response.json();
         setRecipes(data.hits);
         console.log(data.hits);
+        
     };
+
+    //Function for updating the search state
 
     const updateSearch = e => {
       setSearch(e.target.value);
+      console.log(search);
     };
-
+    
 
     const getSearch = e => {
       e.preventDefault();
       setSubmit(search);
       setSearch("");
-
+    }
 
   return (
 <div className="App">
@@ -68,5 +74,4 @@ function App() {
 
   );
 }
-
 export default App;
