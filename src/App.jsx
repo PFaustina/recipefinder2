@@ -17,6 +17,11 @@ function App() {
 
     const [search, setSearch] = useState("");
 
+    //Stores current search submit
+  //creating useState for submit so it would only request after hitting submit/search button
+  const [submit, setSubmit] = useState("");
+
+
     // Function to get recipes from the API
 
     // "promise" request to my api of fetching the data in the background
@@ -30,13 +35,20 @@ function App() {
 
     const updateSearch = e => {
       setSearch(e.target.value);
+    };
+
+
+    const getSearch = e => {
+      e.preventDefault();
+      setSubmit(search);
+      setSearch("");
 
 
   return (
 <div className="App">
 
-   <form className="search-form">
-    <input className="search-bar" type="text"value={search}/>
+   <form onSubmit={getSearch} className="search-form">
+    <input className="search-bar" type="text"value={search}onChange={updateSearch}/>
     <button className="search-button" type="submit">
       Search
       </button>
