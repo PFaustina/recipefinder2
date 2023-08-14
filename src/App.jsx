@@ -27,6 +27,11 @@ function App() {
         setRecipes(data.hits);
         console.log(data.hits);
     };
+
+    const updateSearch = e => {
+      setSearch(e.target.value);
+
+
   return (
 <div className="App">
 
